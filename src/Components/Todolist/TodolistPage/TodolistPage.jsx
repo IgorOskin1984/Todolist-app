@@ -6,22 +6,22 @@ import axios from "axios";
 
 export const TodolistPage = () => {
 
-	const [repoUrl, setRepoUrl] = useState<string>('')
-	const [error, setError] = useState<string>('')
-	const [repoOwner, setRepoOwner] = useState<string>('')
-	const [repoName, setRepoName] = useState<string>('')
+	const [repoUrl, setRepoUrl] = useState('')
+	const [error, setError] = useState('')
+	const [repoOwner, setRepoOwner] = useState('')
+	const [repoName, setRepoName] = useState('')
 
 	const linkToRepoOwner = `https://github.com/${repoOwner}`;
 	const linkToRepoName = `https://github.com/${repoOwner}/${repoName}`
 
 
 
-	const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+	const onChangeHandler = (e) => {
 		setError('')
 		setRepoUrl(e.currentTarget.value)
 
 	}
-	const onKeyUpHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+	const onKeyUpHandler = (e) => {
 		if (e.key === 'Enter') {
 			onClickHandler()
 		}
