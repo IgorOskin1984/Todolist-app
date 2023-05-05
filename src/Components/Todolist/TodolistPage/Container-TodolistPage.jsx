@@ -2,9 +2,11 @@ import { connect } from "react-redux";
 import { TodolistPage } from "./TodolistPage";
 
 const mapStateToProps = (state) => {
-	debugger
 	return {
-		todolist: state.allTasksState
+		todoTitle: state.allTasksState.todoListsTitles.todo,
+		inProgressTitle: state.allTasksState.todoListsTitles.inProgress,
+		doneTitle: state.allTasksState.todoListsTitles.done,
+		tasks: state.allTasksState.tasks
 	}
 }
 

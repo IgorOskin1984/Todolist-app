@@ -4,7 +4,7 @@ import { Todolist } from "../TodolistsItem/Todolist";
 import axios from "axios";
 
 
-export const TodolistPage = () => {
+export const TodolistPage = (props) => {
 
 	const [repoUrl, setRepoUrl] = useState('')
 	const [error, setError] = useState('')
@@ -86,9 +86,9 @@ export const TodolistPage = () => {
 					</div>}
 				</div>
 				<div className={s.tlBody}>
-					<Todolist />
-					<Todolist />
-					<Todolist />
+					<Todolist title={props.todoTitle} />
+					<Todolist title={props.inProgressTitle} />
+					<Todolist title={props.doneTitle} />
 				</div>
 
 
