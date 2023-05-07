@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 const initialState = {
-	todoListsTitles: { todo: "Todo", inProgress: 'In Progress', done: 'Done' },
+	title: "Todo",
 	tasks: []
 };
 

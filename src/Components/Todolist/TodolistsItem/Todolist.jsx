@@ -3,7 +3,7 @@ import s from './Todolist.module.css'
 import { Task } from "../Task/Task";
 
 export const Todolist = ({ title, tasks }) => {
-	console.log(tasks);
+	//console.log(tasks);
 	return (
 		<div className={s.todolist}>
 			<div className={s.container}>

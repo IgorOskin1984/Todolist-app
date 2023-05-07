@@ -5,7 +5,9 @@ import { addTaskAC } from "../../../Redux/allTasksSlice";
 const mapStateToProps = (state) => {
 	//console.log(state);
 	return {
-		todoTitle: state.allTasksState.todoListsTitles.todo,
+		todoTitle: state.allTasksState.title,
+		inProgressTitle: state.inProgressState.title,
+		doneTitle: state.doneTasksState.title,
 		tasks: state.allTasksState.tasks
 	}
 }

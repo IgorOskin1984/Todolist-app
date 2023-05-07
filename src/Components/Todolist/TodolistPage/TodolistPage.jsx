@@ -2,8 +2,6 @@ import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import s from './TodolistPage.module.css'
 import { Todolist } from "../TodolistsItem/Todolist";
 import axios from "axios";
-//import { addTask } from "../../../Redux/allTasksSlice";
-
 
 export const TodolistPage = (props) => {
 
@@ -37,7 +35,6 @@ export const TodolistPage = (props) => {
 		if (match) {
 			setRepoOwner(match[1]);
 			setRepoName(match[2]);
-			//console.log(match);
 
 			axios
 				.get(`https://api.github.com/repos/${match[1]}/${match[2]}/issues`)
@@ -51,13 +48,6 @@ export const TodolistPage = (props) => {
 						task.comments = item.comments
 						props.addTask(task)
 					})
-
-
-					//console.log(response.data[0].title);
-					//console.log(response.data[0].number);
-					//console.log(response.data[0].created_at);
-					//console.log(response.data[0].user.login);
-					//console.log(response.data[0].comments);
 				})
 
 
@@ -98,8 +88,8 @@ export const TodolistPage = (props) => {
 				</div>
 				<div className={s.tlBody}>
 					<Todolist title={props.todoTitle} tasks={props.tasks} />
-					{/*<Todolist title={props.inProgressTitle} />
-					<Todolist title={props.doneTitle} />*/}
+					<Todolist title={props.inProgressTitle} tasks={[]} />
+					<Todolist title={props.doneTitle} tasks={[]} />
 				</div>
 
 

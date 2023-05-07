@@ -1,10 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import allTasksSlice from './allTasksSlice'
+import inProgressTasksSlice from './inProgressTasksSlice';
+import doneTasksSlice from './doneTasksSlice';
 
 
 const store = configureStore({
 	reducer: {
-		allTasksState: allTasksSlice
+		allTasksState: allTasksSlice,
+		inProgressState: inProgressTasksSlice,
+		doneTasksState: doneTasksSlice
 	},
 	devTools: true
 });
