@@ -20,8 +20,9 @@ const allTasksSlice = createSlice({
 
 
 
-export const getTasksThunkCreater = (repoOwner, repoName) => {
-	return getTasksAPI(repoOwner, repoName)
+export const getTasksThunkCreater = (repoOwner, repoName) => async (dispatch) => {
+	const resp = await getTasksAPI(repoOwner, repoName)
+	console.log(resp);
 }
 
 //console.log(resp);

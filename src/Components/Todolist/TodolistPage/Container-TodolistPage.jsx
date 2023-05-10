@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
 		inProgressTitle: state.inProgressState.title,
 		doneTitle: state.doneTasksState.title,
 		tasks: state.allTasksState.tasks,
-		getTasks: getTasksThunkCreater
+		//getTasks: getTasksThunkCreater
 	}
 }
 
@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch) => {
 	//debugger
 	return {
 		addTask: (payload) => dispatch(addTaskAC(payload)),
+		getTasks: (repoOwner, repoName) => dispatch(getTasksThunkCreater(repoOwner, repoName))
 	}
 }
 

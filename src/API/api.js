@@ -9,7 +9,6 @@ const axiosInstance = axios.create({
 export const getTasksAPI = (repoOwner, repoName) => {
 	return axiosInstance.get(`${repoOwner}/${repoName}/issues`)
 		.then(response => {
-			console.log(response.data);
 			return response = response.data
 		})
 }
