@@ -21,8 +21,16 @@ const allTasksSlice = createSlice({
 
 
 export const getTasksThunkCreater = (repoOwner, repoName) => async (dispatch) => {
-	const resp = await getTasksAPI(repoOwner, repoName)
-	console.log(resp);
+	const resp = await getTasksAPI(repoOwner, repoName);
+	resp.forEach((item) => {
+		let task = {}
+		task.title = item.title
+		task.taskNumber = item.number
+		task.created_at = item.created_at
+		task.user = item.user.login
+		task.comments = item.comments
+		dispatch(addTaskAC(task))
+	})
 }
 
 //console.log(resp);
