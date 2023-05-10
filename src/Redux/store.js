@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import allTasksSlice from './allTasksSlice'
 import inProgressTasksSlice from './inProgressTasksSlice';
 import doneTasksSlice from './doneTasksSlice';
+import thunkMiddleware from 'redux-thunk'
 
 
 const store = configureStore({
@@ -10,7 +11,8 @@ const store = configureStore({
 		inProgressState: inProgressTasksSlice,
 		doneTasksState: doneTasksSlice
 	},
-	devTools: true
+	devTools: true,
+	middleware: [thunkMiddleware]
 });
 
 export default store;

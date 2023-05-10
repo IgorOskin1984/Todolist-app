@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { TodolistPage } from "./TodolistPage";
-import { addTaskAC } from "../../../Redux/allTasksSlice";
+import { addTaskAC, getTasksThunkCreater } from "../../../Redux/allTasksSlice";
 
 const mapStateToProps = (state) => {
 	//console.log(state);
@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
 		todoTitle: state.allTasksState.title,
 		inProgressTitle: state.inProgressState.title,
 		doneTitle: state.doneTasksState.title,
-		tasks: state.allTasksState.tasks
+		tasks: state.allTasksState.tasks,
+		getTasks: getTasksThunkCreater
 	}
 }
 

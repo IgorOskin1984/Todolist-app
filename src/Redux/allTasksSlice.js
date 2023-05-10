@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getTasksAPI } from '../API/api';
 
 
 
@@ -16,6 +17,29 @@ const allTasksSlice = createSlice({
 		}
 	},
 });
+
+
+
+export const getTasksThunkCreater = (repoOwner, repoName) => {
+	return getTasksAPI(repoOwner, repoName)
+}
+
+//console.log(resp);
+//axios
+//	.get(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`)
+//	.then((response) => {
+//		response.data.forEach((item) => {
+//			let task = {}
+//			task.title = item.title
+//			task.taskNumber = item.number
+//			task.created_at = item.created_at
+//			task.user = item.user.login
+//			task.comments = item.comments
+//			addTask(task)
+//		})
+//	})
+
+//}
 
 export const { addTaskAC, removeTodo } = allTasksSlice.actions;
 export default allTasksSlice.reducer;
