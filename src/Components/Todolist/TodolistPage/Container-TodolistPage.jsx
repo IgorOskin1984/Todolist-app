@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { TodolistPage } from "./TodolistPage";
-import { addTaskAC, getTasksThunkCreater } from "../../../Redux/allTasksSlice";
+import { addTaskAC, getTasksThunkCreator } from "../../../Redux/allTasksSlice";
 
 const mapStateToProps = (state) => {
 	return {
@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		addTask: (payload) => dispatch(addTaskAC(payload)),
-		getTasks: (repoOwner, repoName) => dispatch(getTasksThunkCreater(repoOwner, repoName))
+		getTasks: (repoOwner, repoName) => dispatch(getTasksThunkCreator(repoOwner, repoName))
 	}
 }
 
