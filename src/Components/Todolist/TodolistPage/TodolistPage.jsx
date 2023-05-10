@@ -36,22 +36,7 @@ export const TodolistPage = (props) => {
 			setRepoOwner(match[1]);
 			setRepoName(match[2]);
 
-			props.getTasks(match[1], match[2], props.addTask)
-
-			//axios
-			//	.get(`https://api.github.com/repos/${match[1]}/${match[2]}/issues`)
-			//	.then((response) => {
-			//		response.data.forEach((item) => {
-			//			let task = {}
-			//			task.title = item.title
-			//			task.taskNumber = item.number
-			//			task.created_at = item.created_at
-			//			task.user = item.user.login
-			//			task.comments = item.comments
-			//			props.addTask(task)
-			//		})
-			//	})
-
+			props.getTasks(match[1], match[2])
 
 			setRepoUrl('')
 		}
