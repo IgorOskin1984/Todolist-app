@@ -10,9 +10,9 @@ import boardSlice from './boardsSlice';
 const store = configureStore({
 	reducer: {
 		boards: boardSlice,
-		allTasksState: allTasksSlice,
-		inProgressState: inProgressTasksSlice,
-		doneTasksState: doneTasksSlice
+		//allTasksState: allTasksSlice,
+		//inProgressState: inProgressTasksSlice,
+		//doneTasksState: doneTasksSlice
 	},
 	devTools: true,
 	middleware: [thunkMiddleware]

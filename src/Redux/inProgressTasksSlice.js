@@ -1,15 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
+//import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+//const initialState = {
 
-	tasks: []
-};
+//	tasks: []
+//};
 
-const inProgressTasksSlice = createSlice({
-	name: 'inProgress',
-	initialState: initialState,
-	reducers: {}
-});
+//const inProgressTasksSlice = createSlice({
+//	name: 'inProgress',
+//	initialState: initialState,
+//	reducers: {}
+//});
 
-export const { addTaskAC, removeTodo } = inProgressTasksSlice.actions;
-export default inProgressTasksSlice.reducer;
+//export const { addTaskAC, removeTodo } = inProgressTasksSlice.actions;
+//export default inProgressTasksSlice.reducer;
