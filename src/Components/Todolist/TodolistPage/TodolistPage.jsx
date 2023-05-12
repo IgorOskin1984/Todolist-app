@@ -77,7 +77,7 @@ export const TodolistPage = (props) => {
 					</div>}
 				</div>
 				<div className={s.tlBody}>
-					<Todolist title={props.todoTitle} tasks={props.tasks} />
+					<Todolist title={props.todoTitle} tasks={props.tasks} addTask={props.addTask} />
 					<Todolist title={props.inProgressTitle} tasks={[]} />
 					<Todolist title={props.doneTitle} tasks={[]} />
 				</div>
