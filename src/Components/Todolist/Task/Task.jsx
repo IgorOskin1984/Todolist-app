@@ -3,7 +3,9 @@ import s from './Task.module.css'
 
 export const Task = (props) => {
 	return (
-		<li className={s.item}>
+		<li className={s.item}
+			draggable={true}
+		>
 			<div className={s.container}>
 				<div className={s.itemTitle}>{props.issueTitle}</div>
 				<div className={s.itemContent}>
