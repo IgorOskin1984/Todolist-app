@@ -1,38 +1,32 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import s from './Task.module.css'
-
-
 
 export const Task = (props) => {
 
-	const [currentTask, setCurrentTask] = useState(null)
 
-	const onDragStartHandle = (e, task) => {
-		//debugger
-		const f = () => {
-			setCurrentTask(task)
-		}
-		f()
-		console.log(e.target.id);
-		console.log(currentTask);
+	const dragItem = useRef()
+
+	const onDragStartHandle = (e, params) => {
+		console.log(params);
+		dragItem.current = params;
 	}
-
 	const onDragOverHandle = (e) => {
 		e.preventDefault();
 	}
-
-
 	const onDropHandle = (e) => {
 		e.preventDefault();
-		debugger
-		console.log(e.currentTarget);
+		console.log(dragItem);
 	}
+
+
+
+
 
 
 	return (
 		<li id={props.order} className={s.item}
 			draggable={true}
-			onDragStart={(e) => onDragStartHandle(e, e.currentTarget)}
+			onDragStart={(e) => onDragStartHandle(e, [props.order, props.task])}
 			onDragOver={e => onDragOverHandle(e)}
 			onDrop={(e) => onDropHandle(e)}
 		>
@@ -47,6 +41,7 @@ export const Task = (props) => {
 					<p>|</p>
 					<p>Comments: {props.commentsQuantity}</p>
 				</div>
+
 			</div>
 		</li>
 	)

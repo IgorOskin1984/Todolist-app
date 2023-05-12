@@ -14,6 +14,7 @@ export const Todolist = ({ title, tasks }) => {
 							//debugger
 							return <Task key={task.taskNumber}
 								order={index}
+								task={task}
 								issueTitle={task.title}
 								issueNumber={task.taskNumber}
 								issueCreationDate={task.created_at}
