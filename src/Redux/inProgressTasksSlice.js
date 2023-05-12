@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-	title: 'In Progress',
+
 	tasks: []
 };
 
 const inProgressTasksSlice = createSlice({
-	name: 'todos',
+	name: 'inProgress',
 	initialState: initialState,
 	reducers: {}
 });

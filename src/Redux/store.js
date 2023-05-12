@@ -1,12 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
+import thunkMiddleware from 'redux-thunk'
 import allTasksSlice from './allTasksSlice'
 import inProgressTasksSlice from './inProgressTasksSlice';
 import doneTasksSlice from './doneTasksSlice';
-import thunkMiddleware from 'redux-thunk'
+import boardSlice from './boardsSlice';
+
 
 
 const store = configureStore({
 	reducer: {
+		boards: boardSlice,
 		allTasksState: allTasksSlice,
 		inProgressState: inProgressTasksSlice,
 		doneTasksState: doneTasksSlice

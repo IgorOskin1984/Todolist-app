@@ -77,9 +77,11 @@ export const TodolistPage = (props) => {
 					</div>}
 				</div>
 				<div className={s.tlBody}>
-					<Todolist title={props.todoTitle} tasks={props.tasks} />
-					<Todolist title={props.inProgressTitle} tasks={[]} />
-					<Todolist title={props.doneTitle} tasks={[]} />
+					{props.boards.map((board) => {
+						return (
+							<Todolist id={board.id} title={board.title} tasks={props.tasks} />
+						)
+					})}
 				</div>
 
 

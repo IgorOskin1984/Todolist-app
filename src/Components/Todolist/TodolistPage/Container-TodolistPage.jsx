@@ -4,9 +4,7 @@ import { addTaskAC, getTasksThunkCreator } from "../../../Redux/allTasksSlice";
 
 const mapStateToProps = (state) => {
 	return {
-		todoTitle: state.allTasksState.title,
-		inProgressTitle: state.inProgressState.title,
-		doneTitle: state.doneTasksState.title,
+		boards: state.boards,
 		tasks: state.allTasksState.tasks,
 	}
 }

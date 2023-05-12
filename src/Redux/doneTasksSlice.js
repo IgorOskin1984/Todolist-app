@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-	title: 'Done',
+
 	tasks: []
 };
 
 const doneTasksSlice = createSlice({
-	name: 'todos',
+	name: 'done',
 	initialState: initialState,
 	reducers: {}
 });

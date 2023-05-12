@@ -4,7 +4,6 @@ import { getTasksAPI } from '../API/api';
 
 
 const initialState = {
-	title: "Todo",
 	tasks: []
 };
 
