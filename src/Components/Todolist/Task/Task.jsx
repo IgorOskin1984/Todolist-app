@@ -17,6 +17,11 @@ export const Task = (props) => {
 		console.log(currentTask);
 	}
 
+	const onDragOverHandle = (e) => {
+		e.preventDefault();
+	}
+
+
 	const onDropHandle = (e) => {
 		e.preventDefault();
 		debugger
@@ -28,6 +33,7 @@ export const Task = (props) => {
 		<li id={props.order} className={s.item}
 			draggable={true}
 			onDragStart={(e) => onDragStartHandle(e, e.currentTarget)}
+			onDragOver={e => onDragOverHandle(e)}
 			onDrop={(e) => onDropHandle(e)}
 		>
 			<div className={s.container}>
