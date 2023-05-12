@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from "react";
+import React, { useState } from "react";
 import s from './TodolistPage.module.css'
 import { Todolist } from "../TodolistsItem/Todolist";
 import axios from "axios";
@@ -12,8 +12,6 @@ export const TodolistPage = (props) => {
 
 	const linkToRepoOwner = `https://github.com/${repoOwner}`;
 	const linkToRepoName = `https://github.com/${repoOwner}/${repoName}`
-
-
 
 	const onChangeHandler = (e) => {
 		setError('')
@@ -45,14 +43,13 @@ export const TodolistPage = (props) => {
 		}
 	}
 
-
-
 	return (
 		<div className={s.todolistPage}>
 			<div className={s.container}>
 				<div>
 					<h4>https://github.com/facebook/react</h4>
 				</div>
+
 				<div className={s.tlHeader}>
 					<div className={s.upHeader}>
 						<input className={error ? s.input + " " + s.inputError : s.input}
@@ -76,17 +73,14 @@ export const TodolistPage = (props) => {
 						</div>
 					</div>}
 				</div>
+
 				<div className={s.tlBody}>
 					{props.boards.map((board) => {
 						return (
 							<Todolist key={board.id} id={board.id} title={board.title} tasks={board.tasks} />
 						)
-					})
-					}
-
+					})}
 				</div>
-
-
 			</div>
 		</div>
 	)

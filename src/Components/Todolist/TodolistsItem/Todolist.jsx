@@ -10,9 +10,10 @@ export const Todolist = ({ title, tasks }) => {
 				<h3 className={s.title}>{title}</h3>
 				<div className={s.body}>
 					<ul className={s.list}>
-						{tasks.length ? tasks.map((task) => {
+						{tasks.length ? tasks.map((task, index) => {
 							//debugger
 							return <Task key={task.taskNumber}
+								order={index}
 								issueTitle={task.title}
 								issueNumber={task.taskNumber}
 								issueCreationDate={task.created_at}
