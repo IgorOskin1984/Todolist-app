@@ -3,7 +3,6 @@ import s from './Todolist.module.css'
 import { Task } from "../Task/Task";
 
 export const Todolist = ({ title, tasks }) => {
-	//console.log(tasks);
 	return (
 		<div className={s.todolist}>
 			<div className={s.container}>
@@ -11,9 +10,8 @@ export const Todolist = ({ title, tasks }) => {
 				<div className={s.body}>
 					<ul className={s.list}>
 						{tasks.length ? tasks.map((task, index) => {
-							//debugger
 							return <Task key={task.taskNumber}
-								order={index}
+								index={index}
 								task={task}
 								issueTitle={task.title}
 								issueNumber={task.taskNumber}
