@@ -1,20 +1,20 @@
 import React, { useRef } from "react";
 import s from './Task.module.css'
 
-export const Task = (props) => {
+export const Task = ({ index, task, issueTitle, issueNumber, issueCreationDate, issueOwner, commentsQuantity }) => {
 
 	return (
-		<li id={props.issueNumber} className={s.item}>
+		<li id={issueNumber} className={s.item}>
 			<div className={s.container}>
-				<div className={s.itemTitle}>{props.issueTitle}</div>
+				<div className={s.itemTitle}>{issueTitle}</div>
 				<div className={s.itemContent}>
-					<p>Task number # {props.issueNumber}</p>
-					<p>Task creation date: {props.issueCreationDate}</p>
+					<p>Task number # {issueNumber}</p>
+					<p>Task creation date: {issueCreationDate}</p>
 				</div>
 				<div className={s.itemInfo}>
-					<p>{props.issueOwner}</p>
+					<p>{issueOwner}</p>
 					<p>|</p>
-					<p>Comments: {props.commentsQuantity}</p>
+					<p>Comments: {commentsQuantity}</p>
 				</div>
 			</div>
 		</li>
