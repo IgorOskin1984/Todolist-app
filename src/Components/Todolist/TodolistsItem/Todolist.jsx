@@ -2,7 +2,9 @@ import React from "react";
 import s from './Todolist.module.css'
 import { Task } from "../Task/Task";
 
-export const Todolist = ({ title, tasks }) => {
+export const Todolist = ({ title, tasks, updateTasks }) => {
+	console.log(tasks);
+	const sortTasks = (a, b) => a.index - b.index
 	return (
 		<div className={s.todolist}>
 			<div className={s.container}>
@@ -11,7 +13,8 @@ export const Todolist = ({ title, tasks }) => {
 					<ul className={s.list}>
 						{tasks.length ? tasks.map((task, index) => {
 							return <Task key={task.taskNumber}
-								index={index}
+								updateTasks={updateTasks}
+								index={task.index}
 								task={task}
 								issueTitle={task.title}
 								issueNumber={task.taskNumber}

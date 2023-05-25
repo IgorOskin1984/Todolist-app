@@ -13,14 +13,24 @@ const boardSlice = createSlice({
 	reducers: {
 		addAllTaskAC: (state, action) => {
 			state[0].tasks.push(action.payload);
+		},
+		udateTasksAC: (state, action) => {
+			const drInd = action.payload.dragIndex;
+			const hvrInd = action.payload.hoverIndex;
+			state[0].tasks = state[0].tasks.map((task) => {
+				if (task.index === drInd) task.index = hvrInd;
+				if (task.index === hvrInd) task.index = hvrInd;
+				return task;
+			})
 		}
 	},
 })
 
 export const getTasksThunkCreator = (repoOwner, repoName) => async (dispatch) => {
 	const resp = await getTasksAPI(repoOwner, repoName);
-	resp.forEach((item) => {
+	resp.forEach((item, index) => {
 		let task = {}
+		task.index = index
 		task.title = item.title
 		task.taskNumber = item.number
 		task.created_at = item.created_at
@@ -30,5 +40,5 @@ export const getTasksThunkCreator = (repoOwner, repoName) => async (dispatch) =>
 	})
 }
 
-export const { addAllTaskAC } = boardSlice.actions;
+export const { addAllTaskAC, udateTasksAC } = boardSlice.actions;
 export default boardSlice.reducer

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import s from './Task.module.css'
 import { useDrag, useDrop } from "react-dnd";
 
-export const Task = ({ index, task, issueTitle, issueNumber, issueCreationDate, issueOwner, commentsQuantity }) => {
+export const Task = ({ updateTasks, index, task, issueTitle, issueNumber, issueCreationDate, issueOwner, commentsQuantity }) => {
 
 	const ref = useRef(null)
 
@@ -14,7 +14,25 @@ export const Task = ({ index, task, issueTitle, issueNumber, issueCreationDate, 
 	const [{ }, drop] = useDrop({
 		accept: 'card',
 		hover(item, monitor) {
-			console.log(item.index, index);
+			const dragIndex = item.index
+			const hoverIndex = index
+			if (dragIndex === hoverIndex) {
+				return
+			}
+			//const hoverBoundingRect = ref.current.getBoundingClientRect()
+			//const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
+			//const clientOffset = monitor.getClientOffset()
+			//const hoverClientY = clientOffset.y - hoverBoundingRect.top
+			//if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+			//  return
+			//}
+			//if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+			//  return
+			//}
+			//if (dragIndex === hoverIndex && hoverClientY === hoverMiddleY) {
+			//  return
+			//}
+			updateTasks({ dragIndex, hoverIndex })
 		},
 		drop(item, monitor) {
 		}
